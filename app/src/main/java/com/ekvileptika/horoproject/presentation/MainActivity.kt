@@ -1,4 +1,4 @@
-package com.ekvileptika.horoproject
+package com.ekvileptika.horoproject.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,8 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.ekvileptika.horoproject.presentation.mainpage.MainPageScreen
 import com.ekvileptika.horoproject.ui.theme.HoroProjectTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +39,13 @@ fun Greeting(name: String) {
     Box(
         modifier = Modifier.fillMaxSize()
     ){
-        Text(
+        /*Text(
             modifier = Modifier.align(Alignment.Center),
             text = "Hello $name!"
-        )
-    }
+        )*/
 
+        MainPageScreen()
+    }
 }
 
 @Preview(showBackground = true)
