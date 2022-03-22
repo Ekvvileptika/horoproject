@@ -4,6 +4,7 @@ import com.ekvileptika.horoproject.BuildConfig
 import com.ekvileptika.horoproject.data.remote.HoroscopeApi
 import com.ekvileptika.horoproject.data.remote.repository.HoroscopeRepositoryImpl
 import com.ekvileptika.horoproject.domain.repository.HoroscopeRepository
+import com.ekvileptika.horoproject.domain.usecases.HoroscopeUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,4 +34,12 @@ class NetworkModule {
     ): HoroscopeRepository{
         return HoroscopeRepositoryImpl(api = apiHoroscope)
     }
+
+/*    @Singleton
+    @Provides
+    fun provideUseCase(
+        repo: HoroscopeRepository
+    ): HoroscopeUseCases {
+        return HoroscopeUseCases(repo)
+    }*/
 }

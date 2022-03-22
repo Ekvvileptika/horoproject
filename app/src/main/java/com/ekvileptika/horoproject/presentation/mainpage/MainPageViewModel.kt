@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainPageViewModel @Inject constructor(
-    private val useCases: HoroscopeUseCases
+    val useCases: HoroscopeUseCases
 ): ViewModel() {
     private val _horoState = mutableStateOf(HoroscopeModel())
     val horoState: State<HoroscopeModel> = _horoState
