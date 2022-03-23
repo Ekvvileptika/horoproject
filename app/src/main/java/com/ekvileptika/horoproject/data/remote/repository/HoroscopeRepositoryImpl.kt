@@ -8,7 +8,7 @@ import javax.inject.Inject
 class HoroscopeRepositoryImpl @Inject constructor(
     private val api: HoroscopeApi
 ): HoroscopeRepository {
-    override suspend fun getHoroscopeInformation(): HoroscopeRemoteDto {
-        return api.getHoroscopeInformation()
+    override suspend fun getHoroscopeInformation(signName: String): HoroscopeRemoteDto {
+        return api.getHoroscopeInformation(signName)
     }
 }

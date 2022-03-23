@@ -2,6 +2,7 @@ package com.ekvileptika.horoproject.presentation.mainpage
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.text.toLowerCase
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ekvileptika.horoproject.domain.model.HoroscopeModel
@@ -20,12 +21,11 @@ class MainPageViewModel @Inject constructor(
     private val _horoState = mutableStateOf(HoroscopeModel())
     val horoState: State<HoroscopeModel> = _horoState
 
-    init {
-        getHoroscopeInformation()
-    }
+    private val _signList = mutableStateOf(SignData.signList)
+    val signList: State<List<HoroscopeSignModel>> = _signList
 
-    private fun getHoroscopeInformation(){
-        useCases().onEach { result ->
+    fun getHoroscopeInformation(signName: String){
+        useCases(signName.lowercase()).onEach { result ->
             when(result){
                 is Resource.Success -> {
                     _horoState.value = result.data!!
