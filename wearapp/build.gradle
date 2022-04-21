@@ -74,4 +74,7 @@ dependencies {
 
     // Foundation is additive, so you can use the mobile version in your Wear OS app.
     implementation "androidx.wear.compose:compose-foundation:1.0.0-alpha19"
+
+    //navigation
+    implementation "androidx.wear.compose:compose-navigation:1.0.0-alpha20"
 }
